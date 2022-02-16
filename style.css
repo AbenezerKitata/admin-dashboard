@@ -1,1 +1,33 @@
+:root{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    display: grid;
+    grid-template-areas: 
+    "s h h"
+    "s p n"
+    ;
+    grid-template-columns:1fr 2fr 1fr;
+    grid-template-rows: 1fr 3fr;
+}
+.header{
+grid-area: h;
+border: 1px solid green;
+}
+.sidebar{
+grid-area: s;
+border: 1px solid rgb(0, 13, 128);
 
+}
+.projects{
+grid-area: p;
+border: 1px solid rgb(128, 0, 117);
+
+}
+.news{
+grid-area: n;
+border: 1px solid rgb(126, 128, 0);
+
+}
