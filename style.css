@@ -16,7 +16,7 @@ body, html{
     grid-template-areas:
         "s h"
         "s p";
-    grid-template-columns: 1fr 3.5fr;
+    grid-template-columns: 1fr 4.5fr;
     grid-template-rows: 1fr 5fr;
     margin: 0;
 }
@@ -36,6 +36,10 @@ body, html{
 .magnify-svg{
     display: flex;
     align-items: center;
+}
+.magnify-svg>img, .bell>img[src="svg/bell-ring.svg"]{
+    transition: all .2s ease-in-out;
+
 }
 #sb-top{
     display: flex;
@@ -59,7 +63,7 @@ body, html{
 }
 
 #search{
-    border-radius: 30px;
+    border-radius: 15px;
     width: 800PX;
     height: 25px;
     appearance: none;
@@ -70,6 +74,11 @@ body, html{
 .hi-there-p>p{
 margin: 0;
 padding: 10px;
+}
+.hi-there-p>p:hover, .bell>p:hover,.card-title:hover, .trending-p-header:hover, .trending>p:hover, .announcement-title-p:hover, .announcements>p:hover{
+cursor: pointer;
+text-decoration: underline;
+color: goldenrod;
 }
 .hi-there-img>.hi-there-avatar{
     height: 70px;
@@ -92,6 +101,7 @@ padding: 10px;
     grid-row: 2;
     align-items: center;
     gap: 30px;
+    transition: all .2s ease-in-out;
 }
 .header-button{
     width: 100px;
@@ -106,6 +116,11 @@ padding: 10px;
     height: 50px;
     width: 50px;
     border-radius: 50%;
+    transition: all .2s ease-in-out;
+}
+.icon:hover{
+    transform: scale(1.5);
+    cursor: pointer;
 }
 
 .sidebar {
@@ -113,13 +128,22 @@ padding: 10px;
     background-color: #1992D4;
 }
 
-.svg-element {
+
+.svg-element, .dashboard {
     display: grid;
-    grid-template-columns: 60px 150px;
+    grid-template-columns: 50px 150px;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     gap: 10px;
     padding: 20px;
+    transition: all .2s ease-in-out;
+
+}
+.svg-element:hover, .three-buttons>button:hover {
+    background-color: #0EA5E9;
+    cursor: pointer;
+    transform: scale(0.99);
+    cursor: pointer;
 }
 .svg-element>.p-bold{
     color: #E2E8F0;
@@ -144,9 +168,15 @@ padding: 10px;
 
 .cards-container {
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(350px, 1fr));
-    grid-template-rows: repeat(3, minmax(220px, 1fr));
+    grid-template-columns: repeat( auto-fit, minmax(380px, 0.8fr));
+    grid-template-rows: repeat(3, minmax(200px, 210px));
     gap: 20px;
+}
+.top-sidebar{
+    margin-bottom: 30px;
+}
+.middle-sidebar{
+    margin-bottom: 40px;
 }
 .projects-title-p, .announcements>.p-bold, .trending>.p-bold{
     margin: 0;
@@ -157,9 +187,10 @@ padding: 10px;
     padding-bottom: 5px;
 }
 .card-title{
-    padding: 20px;
-    padding-bottom: 0;
+    padding: 10px 35px;
+    
 }
+
 
 .p-bold, .card-title, .trending-p-header{
     font-weight: bold;
@@ -167,8 +198,8 @@ padding: 10px;
 }
 .card-paragraph{
     margin: 0;
-    padding:20px;
-    padding-top: 10px;
+    padding:10px 35px;
+    
 
 }
 
@@ -179,8 +210,11 @@ padding: 10px;
     box-sizing: border-box;
     box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
     background-color: white;    
-    display: grid;
-    border-radius: 10px;    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px; 
+    padding: 20px;   
 }
 
 
@@ -189,6 +223,14 @@ padding: 10px;
     grid-template-columns: repeat(3, 40px);
     justify-content: end;
     align-items: center;
+    
+}
+.card-svg>img{
+    transition: all .2s ease-in-out;
+}
+.card-svg>img:hover, .magnify-svg>img:hover, .bell>img[src="svg/bell-ring.svg"]:hover {
+    transform: scale(1.5);
+    cursor: pointer;
 }
 
 
@@ -216,6 +258,15 @@ padding: 10px;
 .trending-sections{
     display: flex;
     padding-bottom: 20px;
+    gap: 20px;
+}
+.trending-sections>img{
+    transition: all .2s ease-in-out;
+}
+
+.trending-sections>img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
 }
 .trending>div>div>img{
     height: 50px;
