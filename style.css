@@ -32,7 +32,7 @@ p {
 
 }
 
-/* ----------------header---------------- */
+/* **********************************header********************************** */
 
 
 .header {
@@ -92,7 +92,7 @@ p {
     gap: 20px;
 }
 
-/* ---------------------sidebar----------------------------- */
+/* **********************************sidebar****************************** */
 .sidebar {
     grid-area: s;
     background-color: #1c1917e3;
@@ -113,6 +113,11 @@ p {
 }
 .sidebar-element>img{
     height: 40px;
+    transition: all .2s ease-in-out;
+}
+.sidebar-element>img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
 }
 /* -------top---- */
 .top-sidebar>.dashboard>p{
@@ -124,15 +129,12 @@ font-weight: 800;
 }
 /* ----------middle----------- */
 
-/* ---------------------Projects----------------------------- */
+/* ***************************Projects**************************** */
 
 .projects {
     grid-area: p;
-
     display: grid;
-    grid-template-areas: 
-    "c a"
-    "c t";
+    grid-template-columns: 4fr 1fr;
     background-color: #E2E8F0;
     padding: 25px;
     gap: 25px;
@@ -145,7 +147,7 @@ font-weight: 800;
     flex-direction: column;
 }
 .card-paragraphs{
-
+padding: 20px;
 }
 .cards-container {
     grid-area: c;
@@ -175,21 +177,27 @@ font-weight: 800;
     justify-content: end;
 }
 /* -------------------------------------------------projects right */
+.projects-right{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
 .announcements{
     grid-area: a;
     height: fit-content;
+    width: fit-content;
+    
 }
 .trending{
- grid-area: t;
- position: relative;
- bottom: 200px;
+display: flex;
+flex-direction: column;
 }
 /* ---top--- */
 .announcements-container {
     display: flex;
     flex-direction: column;
     background-color: white;
-    padding: 20px;
+    padding: 40px;
     border-radius: 10px;
 }
 .announcement-section{  
@@ -226,27 +234,37 @@ font-weight: 800;
     height: 50px;
     width: 50px;
     border-radius: 50%;
+    transition: all .2s ease-in-out;
 }
+
 
 .icon {
     height: 30px;
     width: 30px;
     transition: all .2s ease-in-out;
 }
-.icon:hover{
+.icon:hover,.avatar:hover{
     transform: scale(1.1);
+    cursor: pointer;
 }
 
 /* -------------text--------------- */
 
 .bold {
+    transition: all .2s ease-in-out;
     font-weight: bold;
     color: goldenrod;
+}
+.bold:hover, .bold-big:hover{
+    transform: scale(1.01);
+    cursor: pointer;
+
 }
 
 .bold-big {
     font-weight: 800;
     font-size: 24px;
+    transition: all .2s ease-in-out;
 }
 
 .small {
@@ -255,7 +273,11 @@ font-weight: 800;
 .trending>p, .announcements>p,.projects-left>p{
     padding-bottom: 10px;
     font-size: 20px;
+    width: fit-content;
 
+}
+.trending>p:hover, .announcements>p:hover,.projects-left>p:hover, .card-paragraphs>p.bold:hover{
+    text-decoration: underline;
 }
 .trending>p{
     padding-top: 10px;
@@ -277,4 +299,8 @@ font-weight: 800;
     background-color: #1c1917ea;
     border-style: none;
     color: goldenrod;
+}
+.header-button:hover{
+    color: rgb(177, 177, 177);
+    cursor: pointer;
 }
